@@ -1,0 +1,10 @@
+{
+  "variant": "release",
+  "store_path": "/nix/store/v7sx2kqlnafsv18vw688wf8f0qmr24xh-PROJ-release-0.0.0-9c9bfb6",
+  "path_hash": "v7sx2kqlnafsv18vw688wf8f0qmr24xh",
+  "file_hash": "06jik0rvz5qzccwsx8ykfij6g3yvgi46yc72mavh3s60p931v494",
+  "file_size": 55832,
+  "rev": "9c9bfb6dd44332fde54f8457fa5aba9c94ff50a2",
+  "version": "0.0.0-9c9bfb6",
+  "timestamp": "2026-01-28T10:40:23Z"
+}
