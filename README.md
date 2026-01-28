@@ -4,13 +4,15 @@ Git-based binary cache storing uncompressed NAR files. Uses Git's native delta c
 
 ## Usage
 
-Configure Nix to use this cache as a substituter:
+### As a Nix Substituter
+
+Configure Nix to use this cache:
 
 ```nix
 {
   nixConfig = {
-    extra-substituters = [ "https://raw.githubusercontent.com/ORG/CACHE-REPO/main" ];
-    extra-trusted-public-keys = [ "cache-name:BASE64-PUBLIC-KEY" ];
+    extra-substituters = [ "https://raw.githubusercontent.com/NerdGGuy/PUSH/main" ];
+    extra-trusted-public-keys = [ "buildbuild-cache:BASE64-PUBLIC-KEY" ];
   };
 }
 ```
@@ -18,24 +20,68 @@ Configure Nix to use this cache as a substituter:
 Build with automatic cache lookup:
 
 ```bash
-nix build github:org/project#release
+nix build github:NerdGGuy/PROJ#release
 # Fetches from cache if available, builds locally if not
+```
+
+### Uploading Artifacts
+
+```bash
+# Upload individual files
+./upload.sh export/nar/*.nar
+
+# Upload entire export directory
+./upload.sh export/
+
+# Dry run to see what would be uploaded
+./upload.sh --dry-run export/
 ```
 
 ## Storage Layout
 
 ```
-/
+PUSH/
 ├── nix-cache-info           # StoreDir, Priority
 ├── nar/
 │   └── <hash>.nar           # Uncompressed NAR files
-├── <hash>.narinfo           # Store path metadata
+├── <hash>.narinfo           # Store path metadata + signatures
 ├── logs/
 │   └── <hash>.log           # Build logs (content-addressed)
 ├── manifests/
-│   └── <variant>.json       # Per-variant path listings
-└── index.txt                # Complete path index
+│   └── <variant>.json       # Per-variant latest build info
+├── index.txt                # Complete path index
+└── upload.sh                # Upload script
 ```
+
+## upload.sh Script
+
+Upload NAR files and metadata to the cache repository via GitHub API:
+
+```bash
+# Basic usage
+./upload.sh FILE...
+
+# With options
+./upload.sh --owner NerdGGuy --repo PUSH --branch main export/
+
+# Dry run
+./upload.sh --dry-run export/
+```
+
+**Options:**
+| Option | Description |
+|--------|-------------|
+| `--owner OWNER` | Repository owner |
+| `--repo REPO` | Repository name |
+| `--branch BRANCH` | Target branch (default: main) |
+| `--prefix PATH` | Path prefix in repository |
+| `--dry-run` | Show what would be uploaded |
+
+**Environment:**
+| Variable | Description |
+|----------|-------------|
+| `CACHE_REPO_TOKEN` | GitHub token with write access |
+| `GITHUB_TOKEN` | Fallback token |
 
 ## Why Uncompressed?
 
@@ -76,7 +122,7 @@ Build logs use the Nix store path hash as filename:
 | Size | API | Notes |
 |------|-----|-------|
 | < 1 MB | Contents API | Base64 in request body |
-| 1-100 MB | Blobs API | Base64 upload |
+| 1-100 MB | Blobs API | Base64 upload, uses Git tree API |
 | > 100 MB | Not supported | Split package or use LFS |
 
 ## narinfo Format
@@ -93,10 +139,26 @@ References: <space-separated store paths>
 Sig: <key-name>:<base64-signature>
 ```
 
+## manifest.json Format
+
+```json
+{
+  "variant": "release",
+  "store_path": "/nix/store/abc123...-PROJ-release-1.0.0",
+  "path_hash": "abc123...",
+  "file_hash": "sha256:...",
+  "file_size": 1234567,
+  "rev": "abc123def456...",
+  "version": "1.0.0",
+  "timestamp": "2024-01-15T10:30:00Z"
+}
+```
+
 ## Dependencies
 
-- Git
-- Nix (for NAR operations)
+- curl
+- jq
+- base64
 
 ## License
 
