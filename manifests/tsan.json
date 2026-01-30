@@ -1,0 +1,10 @@
+{
+  "variant": "tsan",
+  "store_path": "/nix/store/61gglnmh5igkaw1snms7rl17i6prn7wg-PROJ-tsan-0.0.0-1b311cd",
+  "path_hash": "61gglnmh5igkaw1snms7rl17i6prn7wg",
+  "file_hash": "1xkwznzzbxb9g8z8kx0lkwjczrgda6f7ydc2mi8pw91k6alx48ax",
+  "file_size": 5177768,
+  "rev": "1b311cd8552ec231667ab6bb66c9eafe19a18184",
+  "version": "0.0.0-1b311cd",
+  "timestamp": "2026-01-30T03:48:04Z"
+}
