@@ -1,10 +1,10 @@
 {
   "variant": "release",
-  "store_path": "/nix/store/7pzwh0bvnah28fia6iawidw8nl2hksd9-PROJ-release-0.0.0-92ed52d",
-  "path_hash": "7pzwh0bvnah28fia6iawidw8nl2hksd9",
+  "store_path": "/nix/store/h4fwbm1i563ghbai98yaqhxjcwjbqyai-PROJ-release-0.0.0-f92309e",
+  "path_hash": "h4fwbm1i563ghbai98yaqhxjcwjbqyai",
   "file_hash": "06jik0rvz5qzccwsx8ykfij6g3yvgi46yc72mavh3s60p931v494",
   "file_size": 55832,
-  "rev": "92ed52d2b21143b2792499d46433279b6f5c49c2",
-  "version": "0.0.0-92ed52d",
-  "timestamp": "2026-01-30T04:19:06Z"
+  "rev": "f92309eeb7577523f1c750a73bce1adbb0be935f",
+  "version": "0.0.0-f92309e",
+  "timestamp": "2026-01-30T06:30:26Z"
 }
