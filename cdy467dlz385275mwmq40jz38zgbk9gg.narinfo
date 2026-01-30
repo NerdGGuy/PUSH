@@ -1,0 +1,8 @@
+StorePath: /nix/store/cdy467dlz385275mwmq40jz38zgbk9gg-PROJ-tsan-0.0.0-f92309e
+URL: nar/cdy467dlz385275mwmq40jz38zgbk9gg.nar
+Compression: none
+FileHash: sha256:1xkwznzzbxb9g8z8kx0lkwjczrgda6f7ydc2mi8pw91k6alx48ax
+FileSize: 5177768
+NarHash: sha256:1xkwznzzbxb9g8z8kx0lkwjczrgda6f7ydc2mi8pw91k6alx48ax
+NarSize: 5177768
+References: /nix/store/wb6rhpznjfczwlwx23zmdrrw74bayxw4-glibc-2.42-47 /nix/store/j2kgllgds4w7na8zqv1msi0mpvpjxda8-gcc-15.2.0-lib 
