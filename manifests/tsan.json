@@ -1,10 +1,10 @@
 {
   "variant": "tsan",
-  "store_path": "/nix/store/67zmmh4hy2vrz9nnnf10ffm6mlc3f2yk-PROJ-tsan-0.0.0-04f1be3",
-  "path_hash": "67zmmh4hy2vrz9nnnf10ffm6mlc3f2yk",
+  "store_path": "/nix/store/5pp5i5zr61r3dk5iv0wqdhkd14png96b-PROJ-tsan-0.0.0-113d6a3",
+  "path_hash": "5pp5i5zr61r3dk5iv0wqdhkd14png96b",
   "file_hash": "1xkwznzzbxb9g8z8kx0lkwjczrgda6f7ydc2mi8pw91k6alx48ax",
   "file_size": 5177768,
-  "rev": "04f1be3fb421428350962340a2238190c549ad0b",
-  "version": "0.0.0-04f1be3",
-  "timestamp": "2026-01-30T03:58:31Z"
+  "rev": "113d6a3ec89a4d787f9b75ba6823c6b44ed3d4b4",
+  "version": "0.0.0-113d6a3",
+  "timestamp": "2026-01-30T04:02:22Z"
 }
