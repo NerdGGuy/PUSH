@@ -1,0 +1,41 @@
+warning: not writing modified lock file of flake 'git+file:///home/gguy/Source/buildbuild/PULL':
+• Added input 'flake-parts':
+    'github:hercules-ci/flake-parts/80daad04eddbbf5a4d883996a73f3f542fa437ac?narHash=sha256-PVvu7OqHBGWN16zSi6tEmPwwHQ4rLPU9Plvs8/1TUBY%3D' (2026-01-11)
+• Added input 'flake-parts/nixpkgs-lib':
+    'github:nix-community/nixpkgs.lib/2075416fcb47225d9b68ac469a5c4801a9c4dd85?narHash=sha256-k00uTP4JNfmejrCLJOwdObYC9jHRrr/5M/a/8L2EIdo%3D' (2025-12-14)
+• Removed input 'flake-utils'
+• Removed input 'flake-utils/systems'
+• Added input 'src':
+    'git+ssh://git@github.com/NerdGGuy/PROJ?ref=refs/heads/main&rev=92ed52d2b21143b2792499d46433279b6f5c49c2' (2026-01-30)
+this derivation will be built:
+  /nix/store/9vzv6lwpnzm5pdm9bapr515zaqsd5vk9-PROJ-tsan-0.0.0-92ed52d.drv
+building '/nix/store/9vzv6lwpnzm5pdm9bapr515zaqsd5vk9-PROJ-tsan-0.0.0-92ed52d.drv'...
+PROJ-tsan> Running phase: unpackPhase
+PROJ-tsan> unpacking source archive /nix/store/zk11rrzqw25slpdhgqrbw0zj18fyic1f-source
+PROJ-tsan> source root is source
+PROJ-tsan> Running phase: patchPhase
+PROJ-tsan> Running phase: updateAutotoolsGnuConfigScriptsPhase
+PROJ-tsan> Running phase: configurePhase
+PROJ-tsan> no configure script, doing nothing
+PROJ-tsan> Running phase: buildPhase
+PROJ-tsan> build flags: SHELL=/nix/store/f15k3dpilmiyv6zgpib289rnjykgr1r4-bash-5.3p9/bin/bash VARIANT=tsan CXX=/nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ CC=/nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang AR=/nix/store/5chxlq8nygpr9y6y9y9aqc3fsa28ng8w-llvm-21.1.8/bin/llvm-ar
+PROJ-tsan> mkdir -p build/tsan/lib
+PROJ-tsan> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=thread -c src/lib/calculator.cpp -o build/tsan/lib/calculator.o
+PROJ-tsan> /nix/store/5chxlq8nygpr9y6y9y9aqc3fsa28ng8w-llvm-21.1.8/bin/llvm-ar rcs build/tsan/libcalculator.a build/tsan/lib/calculator.o
+PROJ-tsan> mkdir -p build/tsan/apps
+PROJ-tsan> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=thread -Isrc/lib -c src/apps/calc.cpp -o build/tsan/apps/calc.o
+PROJ-tsan> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=thread -fsanitize=thread -fsanitize=thread build/tsan/apps/calc.o -Lbuild/tsan -lcalculator -o build/tsan/calc
+PROJ-tsan> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=thread -Isrc/lib -c src/apps/demo.cpp -o build/tsan/apps/demo.o
+PROJ-tsan> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=thread -fsanitize=thread -fsanitize=thread build/tsan/apps/demo.o -Lbuild/tsan -lcalculator -o build/tsan/demo
+PROJ-tsan> mkdir -p build/tsan/tests
+PROJ-tsan> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=thread -Isrc/lib -c tests/test_calculator.cpp -o build/tsan/tests/test_calculator.o
+PROJ-tsan> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=thread -fsanitize=thread -fsanitize=thread build/tsan/tests/test_calculator.o -Lbuild/tsan -lcalculator -o build/tsan/test_calculator
+PROJ-tsan> Running phase: installPhase
+PROJ-tsan> Running phase: fixupPhase
+PROJ-tsan> shrinking RPATHs of ELF executables and libraries in /nix/store/gc0lclfchn2pxbhjlx4kd4k5k5q0y394-PROJ-tsan-0.0.0-92ed52d
+PROJ-tsan> shrinking /nix/store/gc0lclfchn2pxbhjlx4kd4k5k5q0y394-PROJ-tsan-0.0.0-92ed52d/bin/calc
+PROJ-tsan> shrinking /nix/store/gc0lclfchn2pxbhjlx4kd4k5k5q0y394-PROJ-tsan-0.0.0-92ed52d/bin/test_calculator
+PROJ-tsan> shrinking /nix/store/gc0lclfchn2pxbhjlx4kd4k5k5q0y394-PROJ-tsan-0.0.0-92ed52d/bin/demo
+PROJ-tsan> checking for references to /build/ in /nix/store/gc0lclfchn2pxbhjlx4kd4k5k5q0y394-PROJ-tsan-0.0.0-92ed52d...
+PROJ-tsan> patching script interpreter paths in /nix/store/gc0lclfchn2pxbhjlx4kd4k5k5q0y394-PROJ-tsan-0.0.0-92ed52d
+PROJ-tsan> stripping (with command strip and flags -S -p) in  /nix/store/gc0lclfchn2pxbhjlx4kd4k5k5q0y394-PROJ-tsan-0.0.0-92ed52d/lib /nix/store/gc0lclfchn2pxbhjlx4kd4k5k5q0y394-PROJ-tsan-0.0.0-92ed52d/bin
