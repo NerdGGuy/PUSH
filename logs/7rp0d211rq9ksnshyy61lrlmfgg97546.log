@@ -1,0 +1,42 @@
+warning: Git tree '/home/gguy/Source/buildbuild/PULL' is dirty
+warning: not writing modified lock file of flake 'git+file:///home/gguy/Source/buildbuild/PULL':
+• Added input 'flake-parts':
+    'github:hercules-ci/flake-parts/80daad04eddbbf5a4d883996a73f3f542fa437ac?narHash=sha256-PVvu7OqHBGWN16zSi6tEmPwwHQ4rLPU9Plvs8/1TUBY%3D' (2026-01-11)
+• Added input 'flake-parts/nixpkgs-lib':
+    'github:nix-community/nixpkgs.lib/2075416fcb47225d9b68ac469a5c4801a9c4dd85?narHash=sha256-k00uTP4JNfmejrCLJOwdObYC9jHRrr/5M/a/8L2EIdo%3D' (2025-12-14)
+• Removed input 'flake-utils'
+• Removed input 'flake-utils/systems'
+• Added input 'src':
+    'git+ssh://git@github.com/NerdGGuy/PROJ?ref=refs/heads/main&rev=5e045d3765ccf646750bcda4ad2730e357b81c90' (2026-01-30)
+this derivation will be built:
+  /nix/store/kan7p7pndj9127gnsnhx997711ah047d-PROJ-coverage-0.0.0-5e045d3.drv
+building '/nix/store/kan7p7pndj9127gnsnhx997711ah047d-PROJ-coverage-0.0.0-5e045d3.drv'...
+PROJ-coverage> Running phase: unpackPhase
+PROJ-coverage> unpacking source archive /nix/store/qy7grjbdh8ixhch1jjn7y8rrii7szc0q-source
+PROJ-coverage> source root is source
+PROJ-coverage> Running phase: patchPhase
+PROJ-coverage> Running phase: updateAutotoolsGnuConfigScriptsPhase
+PROJ-coverage> Running phase: configurePhase
+PROJ-coverage> no configure script, doing nothing
+PROJ-coverage> Running phase: buildPhase
+PROJ-coverage> build flags: SHELL=/nix/store/f15k3dpilmiyv6zgpib289rnjykgr1r4-bash-5.3p9/bin/bash VARIANT=coverage CXX=/nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ CC=/nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang AR=/nix/store/5chxlq8nygpr9y6y9y9aqc3fsa28ng8w-llvm-21.1.8/bin/llvm-ar
+PROJ-coverage> mkdir -p build/coverage/lib
+PROJ-coverage> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g --coverage -c src/lib/calculator.cpp -o build/coverage/lib/calculator.o
+PROJ-coverage> /nix/store/5chxlq8nygpr9y6y9y9aqc3fsa28ng8w-llvm-21.1.8/bin/llvm-ar rcs build/coverage/libcalculator.a build/coverage/lib/calculator.o
+PROJ-coverage> mkdir -p build/coverage/apps
+PROJ-coverage> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g --coverage -Isrc/lib -c src/apps/calc.cpp -o build/coverage/apps/calc.o
+PROJ-coverage> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g --coverage --coverage --coverage build/coverage/apps/calc.o -Lbuild/coverage -lcalculator -o build/coverage/calc
+PROJ-coverage> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g --coverage -Isrc/lib -c src/apps/demo.cpp -o build/coverage/apps/demo.o
+PROJ-coverage> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g --coverage --coverage --coverage build/coverage/apps/demo.o -Lbuild/coverage -lcalculator -o build/coverage/demo
+PROJ-coverage> mkdir -p build/coverage/tests
+PROJ-coverage> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g --coverage -Isrc/lib -c tests/test_calculator.cpp -o build/coverage/tests/test_calculator.o
+PROJ-coverage> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g --coverage --coverage --coverage build/coverage/tests/test_calculator.o -Lbuild/coverage -lcalculator -o build/coverage/test_calculator
+PROJ-coverage> Running phase: installPhase
+PROJ-coverage> Running phase: fixupPhase
+PROJ-coverage> shrinking RPATHs of ELF executables and libraries in /nix/store/7rp0d211rq9ksnshyy61lrlmfgg97546-PROJ-coverage-0.0.0-5e045d3
+PROJ-coverage> shrinking /nix/store/7rp0d211rq9ksnshyy61lrlmfgg97546-PROJ-coverage-0.0.0-5e045d3/bin/calc
+PROJ-coverage> shrinking /nix/store/7rp0d211rq9ksnshyy61lrlmfgg97546-PROJ-coverage-0.0.0-5e045d3/bin/test_calculator
+PROJ-coverage> shrinking /nix/store/7rp0d211rq9ksnshyy61lrlmfgg97546-PROJ-coverage-0.0.0-5e045d3/bin/demo
+PROJ-coverage> checking for references to /build/ in /nix/store/7rp0d211rq9ksnshyy61lrlmfgg97546-PROJ-coverage-0.0.0-5e045d3...
+PROJ-coverage> patching script interpreter paths in /nix/store/7rp0d211rq9ksnshyy61lrlmfgg97546-PROJ-coverage-0.0.0-5e045d3
+PROJ-coverage> stripping (with command strip and flags -S -p) in  /nix/store/7rp0d211rq9ksnshyy61lrlmfgg97546-PROJ-coverage-0.0.0-5e045d3/lib /nix/store/7rp0d211rq9ksnshyy61lrlmfgg97546-PROJ-coverage-0.0.0-5e045d3/bin
