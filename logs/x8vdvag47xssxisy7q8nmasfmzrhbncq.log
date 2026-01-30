@@ -1,0 +1,41 @@
+warning: not writing modified lock file of flake 'git+file:///home/gguy/Source/buildbuild/PULL':
+• Added input 'flake-parts':
+    'github:hercules-ci/flake-parts/80daad04eddbbf5a4d883996a73f3f542fa437ac?narHash=sha256-PVvu7OqHBGWN16zSi6tEmPwwHQ4rLPU9Plvs8/1TUBY%3D' (2026-01-11)
+• Added input 'flake-parts/nixpkgs-lib':
+    'github:nix-community/nixpkgs.lib/2075416fcb47225d9b68ac469a5c4801a9c4dd85?narHash=sha256-k00uTP4JNfmejrCLJOwdObYC9jHRrr/5M/a/8L2EIdo%3D' (2025-12-14)
+• Removed input 'flake-utils'
+• Removed input 'flake-utils/systems'
+• Added input 'src':
+    'git+ssh://git@github.com/NerdGGuy/PROJ?ref=refs/heads/main&rev=f92309eeb7577523f1c750a73bce1adbb0be935f' (2026-01-30)
+this derivation will be built:
+  /nix/store/i0x9kv1slqjjpgqx1z6y9b3wskavd77w-PROJ-asan-0.0.0-f92309e.drv
+building '/nix/store/i0x9kv1slqjjpgqx1z6y9b3wskavd77w-PROJ-asan-0.0.0-f92309e.drv'...
+PROJ-asan> Running phase: unpackPhase
+PROJ-asan> unpacking source archive /nix/store/caplraydc8fag9gxlvrb8n3ksj2mvj85-source
+PROJ-asan> source root is source
+PROJ-asan> Running phase: patchPhase
+PROJ-asan> Running phase: updateAutotoolsGnuConfigScriptsPhase
+PROJ-asan> Running phase: configurePhase
+PROJ-asan> no configure script, doing nothing
+PROJ-asan> Running phase: buildPhase
+PROJ-asan> build flags: SHELL=/nix/store/f15k3dpilmiyv6zgpib289rnjykgr1r4-bash-5.3p9/bin/bash VARIANT=asan CXX=/nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ CC=/nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang AR=/nix/store/5chxlq8nygpr9y6y9y9aqc3fsa28ng8w-llvm-21.1.8/bin/llvm-ar
+PROJ-asan> mkdir -p build/asan/lib
+PROJ-asan> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=address -c src/lib/calculator.cpp -o build/asan/lib/calculator.o
+PROJ-asan> /nix/store/5chxlq8nygpr9y6y9y9aqc3fsa28ng8w-llvm-21.1.8/bin/llvm-ar rcs build/asan/libcalculator.a build/asan/lib/calculator.o
+PROJ-asan> mkdir -p build/asan/apps
+PROJ-asan> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=address -Isrc/lib -c src/apps/calc.cpp -o build/asan/apps/calc.o
+PROJ-asan> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=address -fsanitize=address -fsanitize=address build/asan/apps/calc.o -Lbuild/asan -lcalculator -o build/asan/calc
+PROJ-asan> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=address -Isrc/lib -c src/apps/demo.cpp -o build/asan/apps/demo.o
+PROJ-asan> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=address -fsanitize=address -fsanitize=address build/asan/apps/demo.o -Lbuild/asan -lcalculator -o build/asan/demo
+PROJ-asan> mkdir -p build/asan/tests
+PROJ-asan> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=address -Isrc/lib -c tests/test_calculator.cpp -o build/asan/tests/test_calculator.o
+PROJ-asan> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=address -fsanitize=address -fsanitize=address build/asan/tests/test_calculator.o -Lbuild/asan -lcalculator -o build/asan/test_calculator
+PROJ-asan> Running phase: installPhase
+PROJ-asan> Running phase: fixupPhase
+PROJ-asan> shrinking RPATHs of ELF executables and libraries in /nix/store/x8vdvag47xssxisy7q8nmasfmzrhbncq-PROJ-asan-0.0.0-f92309e
+PROJ-asan> shrinking /nix/store/x8vdvag47xssxisy7q8nmasfmzrhbncq-PROJ-asan-0.0.0-f92309e/bin/calc
+PROJ-asan> shrinking /nix/store/x8vdvag47xssxisy7q8nmasfmzrhbncq-PROJ-asan-0.0.0-f92309e/bin/test_calculator
+PROJ-asan> shrinking /nix/store/x8vdvag47xssxisy7q8nmasfmzrhbncq-PROJ-asan-0.0.0-f92309e/bin/demo
+PROJ-asan> checking for references to /build/ in /nix/store/x8vdvag47xssxisy7q8nmasfmzrhbncq-PROJ-asan-0.0.0-f92309e...
+PROJ-asan> patching script interpreter paths in /nix/store/x8vdvag47xssxisy7q8nmasfmzrhbncq-PROJ-asan-0.0.0-f92309e
+PROJ-asan> stripping (with command strip and flags -S -p) in  /nix/store/x8vdvag47xssxisy7q8nmasfmzrhbncq-PROJ-asan-0.0.0-f92309e/lib /nix/store/x8vdvag47xssxisy7q8nmasfmzrhbncq-PROJ-asan-0.0.0-f92309e/bin
