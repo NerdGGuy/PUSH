@@ -1,0 +1,41 @@
+warning: not writing modified lock file of flake 'git+file:///home/gguy/Source/buildbuild/PULL':
+• Added input 'flake-parts':
+    'github:hercules-ci/flake-parts/80daad04eddbbf5a4d883996a73f3f542fa437ac?narHash=sha256-PVvu7OqHBGWN16zSi6tEmPwwHQ4rLPU9Plvs8/1TUBY%3D' (2026-01-11)
+• Added input 'flake-parts/nixpkgs-lib':
+    'github:nix-community/nixpkgs.lib/2075416fcb47225d9b68ac469a5c4801a9c4dd85?narHash=sha256-k00uTP4JNfmejrCLJOwdObYC9jHRrr/5M/a/8L2EIdo%3D' (2025-12-14)
+• Removed input 'flake-utils'
+• Removed input 'flake-utils/systems'
+• Added input 'src':
+    'git+ssh://git@github.com/NerdGGuy/PROJ?ref=refs/heads/main&rev=1b311cd8552ec231667ab6bb66c9eafe19a18184' (2026-01-30)
+this derivation will be built:
+  /nix/store/l9m3pdqha28ksqna5kd7r9xrkl0306x9-PROJ-fuzz-0.0.0-1b311cd.drv
+building '/nix/store/l9m3pdqha28ksqna5kd7r9xrkl0306x9-PROJ-fuzz-0.0.0-1b311cd.drv'...
+PROJ-fuzz> Running phase: unpackPhase
+PROJ-fuzz> unpacking source archive /nix/store/xr26ghlfqn496axfbxzv3nk3mk68dv0y-source
+PROJ-fuzz> source root is source
+PROJ-fuzz> Running phase: patchPhase
+PROJ-fuzz> Running phase: updateAutotoolsGnuConfigScriptsPhase
+PROJ-fuzz> Running phase: configurePhase
+PROJ-fuzz> no configure script, doing nothing
+PROJ-fuzz> Running phase: buildPhase
+PROJ-fuzz> build flags: SHELL=/nix/store/f15k3dpilmiyv6zgpib289rnjykgr1r4-bash-5.3p9/bin/bash VARIANT=fuzz CXX=/nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ CC=/nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang AR=/nix/store/5chxlq8nygpr9y6y9y9aqc3fsa28ng8w-llvm-21.1.8/bin/llvm-ar
+PROJ-fuzz> mkdir -p build/fuzz/lib
+PROJ-fuzz> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=address -fno-omit-frame-pointer -c src/lib/calculator.cpp -o build/fuzz/lib/calculator.o
+PROJ-fuzz> /nix/store/5chxlq8nygpr9y6y9y9aqc3fsa28ng8w-llvm-21.1.8/bin/llvm-ar rcs build/fuzz/libcalculator.a build/fuzz/lib/calculator.o
+PROJ-fuzz> mkdir -p build/fuzz/apps
+PROJ-fuzz> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=address -fno-omit-frame-pointer -Isrc/lib -c src/apps/calc.cpp -o build/fuzz/apps/calc.o
+PROJ-fuzz> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=address -fno-omit-frame-pointer -fsanitize=address -fsanitize=address build/fuzz/apps/calc.o -Lbuild/fuzz -lcalculator -o build/fuzz/calc
+PROJ-fuzz> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=address -fno-omit-frame-pointer -Isrc/lib -c src/apps/demo.cpp -o build/fuzz/apps/demo.o
+PROJ-fuzz> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=address -fno-omit-frame-pointer -fsanitize=address -fsanitize=address build/fuzz/apps/demo.o -Lbuild/fuzz -lcalculator -o build/fuzz/demo
+PROJ-fuzz> mkdir -p build/fuzz/tests
+PROJ-fuzz> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=address -fno-omit-frame-pointer -Isrc/lib -c tests/test_calculator.cpp -o build/fuzz/tests/test_calculator.o
+PROJ-fuzz> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=address -fno-omit-frame-pointer -fsanitize=address -fsanitize=address build/fuzz/tests/test_calculator.o -Lbuild/fuzz -lcalculator -o build/fuzz/test_calculator
+PROJ-fuzz> Running phase: installPhase
+PROJ-fuzz> Running phase: fixupPhase
+PROJ-fuzz> shrinking RPATHs of ELF executables and libraries in /nix/store/srqpgbnyd1hasjy71m6jamvd91lmz3fd-PROJ-fuzz-0.0.0-1b311cd
+PROJ-fuzz> shrinking /nix/store/srqpgbnyd1hasjy71m6jamvd91lmz3fd-PROJ-fuzz-0.0.0-1b311cd/bin/calc
+PROJ-fuzz> shrinking /nix/store/srqpgbnyd1hasjy71m6jamvd91lmz3fd-PROJ-fuzz-0.0.0-1b311cd/bin/test_calculator
+PROJ-fuzz> shrinking /nix/store/srqpgbnyd1hasjy71m6jamvd91lmz3fd-PROJ-fuzz-0.0.0-1b311cd/bin/demo
+PROJ-fuzz> checking for references to /build/ in /nix/store/srqpgbnyd1hasjy71m6jamvd91lmz3fd-PROJ-fuzz-0.0.0-1b311cd...
+PROJ-fuzz> patching script interpreter paths in /nix/store/srqpgbnyd1hasjy71m6jamvd91lmz3fd-PROJ-fuzz-0.0.0-1b311cd
+PROJ-fuzz> stripping (with command strip and flags -S -p) in  /nix/store/srqpgbnyd1hasjy71m6jamvd91lmz3fd-PROJ-fuzz-0.0.0-1b311cd/lib /nix/store/srqpgbnyd1hasjy71m6jamvd91lmz3fd-PROJ-fuzz-0.0.0-1b311cd/bin
