@@ -1,0 +1,41 @@
+warning: not writing modified lock file of flake 'git+file:///home/gguy/Source/buildbuild/PULL':
+• Added input 'flake-parts':
+    'github:hercules-ci/flake-parts/80daad04eddbbf5a4d883996a73f3f542fa437ac?narHash=sha256-PVvu7OqHBGWN16zSi6tEmPwwHQ4rLPU9Plvs8/1TUBY%3D' (2026-01-11)
+• Added input 'flake-parts/nixpkgs-lib':
+    'github:nix-community/nixpkgs.lib/2075416fcb47225d9b68ac469a5c4801a9c4dd85?narHash=sha256-k00uTP4JNfmejrCLJOwdObYC9jHRrr/5M/a/8L2EIdo%3D' (2025-12-14)
+• Removed input 'flake-utils'
+• Removed input 'flake-utils/systems'
+• Added input 'src':
+    'git+ssh://git@github.com/NerdGGuy/PROJ?ref=refs/heads/main&rev=f92309eeb7577523f1c750a73bce1adbb0be935f' (2026-01-30)
+this derivation will be built:
+  /nix/store/3mphlkcmi3agdd27dpvv97aplhzgxi45-PROJ-msan-0.0.0-f92309e.drv
+building '/nix/store/3mphlkcmi3agdd27dpvv97aplhzgxi45-PROJ-msan-0.0.0-f92309e.drv'...
+PROJ-msan> Running phase: unpackPhase
+PROJ-msan> unpacking source archive /nix/store/caplraydc8fag9gxlvrb8n3ksj2mvj85-source
+PROJ-msan> source root is source
+PROJ-msan> Running phase: patchPhase
+PROJ-msan> Running phase: updateAutotoolsGnuConfigScriptsPhase
+PROJ-msan> Running phase: configurePhase
+PROJ-msan> no configure script, doing nothing
+PROJ-msan> Running phase: buildPhase
+PROJ-msan> build flags: SHELL=/nix/store/f15k3dpilmiyv6zgpib289rnjykgr1r4-bash-5.3p9/bin/bash VARIANT=msan CXX=/nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ CC=/nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang AR=/nix/store/5chxlq8nygpr9y6y9y9aqc3fsa28ng8w-llvm-21.1.8/bin/llvm-ar
+PROJ-msan> mkdir -p build/msan/lib
+PROJ-msan> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=memory -fno-omit-frame-pointer -c src/lib/calculator.cpp -o build/msan/lib/calculator.o
+PROJ-msan> /nix/store/5chxlq8nygpr9y6y9y9aqc3fsa28ng8w-llvm-21.1.8/bin/llvm-ar rcs build/msan/libcalculator.a build/msan/lib/calculator.o
+PROJ-msan> mkdir -p build/msan/apps
+PROJ-msan> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=memory -fno-omit-frame-pointer -Isrc/lib -c src/apps/calc.cpp -o build/msan/apps/calc.o
+PROJ-msan> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=memory -fno-omit-frame-pointer -fsanitize=memory -fsanitize=memory build/msan/apps/calc.o -Lbuild/msan -lcalculator -o build/msan/calc
+PROJ-msan> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=memory -fno-omit-frame-pointer -Isrc/lib -c src/apps/demo.cpp -o build/msan/apps/demo.o
+PROJ-msan> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=memory -fno-omit-frame-pointer -fsanitize=memory -fsanitize=memory build/msan/apps/demo.o -Lbuild/msan -lcalculator -o build/msan/demo
+PROJ-msan> mkdir -p build/msan/tests
+PROJ-msan> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=memory -fno-omit-frame-pointer -Isrc/lib -c tests/test_calculator.cpp -o build/msan/tests/test_calculator.o
+PROJ-msan> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=memory -fno-omit-frame-pointer -fsanitize=memory -fsanitize=memory build/msan/tests/test_calculator.o -Lbuild/msan -lcalculator -o build/msan/test_calculator
+PROJ-msan> Running phase: installPhase
+PROJ-msan> Running phase: fixupPhase
+PROJ-msan> shrinking RPATHs of ELF executables and libraries in /nix/store/s5j5jjv7byy31bk88n6jhdrsbmk5qj1j-PROJ-msan-0.0.0-f92309e
+PROJ-msan> shrinking /nix/store/s5j5jjv7byy31bk88n6jhdrsbmk5qj1j-PROJ-msan-0.0.0-f92309e/bin/calc
+PROJ-msan> shrinking /nix/store/s5j5jjv7byy31bk88n6jhdrsbmk5qj1j-PROJ-msan-0.0.0-f92309e/bin/test_calculator
+PROJ-msan> shrinking /nix/store/s5j5jjv7byy31bk88n6jhdrsbmk5qj1j-PROJ-msan-0.0.0-f92309e/bin/demo
+PROJ-msan> checking for references to /build/ in /nix/store/s5j5jjv7byy31bk88n6jhdrsbmk5qj1j-PROJ-msan-0.0.0-f92309e...
+PROJ-msan> patching script interpreter paths in /nix/store/s5j5jjv7byy31bk88n6jhdrsbmk5qj1j-PROJ-msan-0.0.0-f92309e
+PROJ-msan> stripping (with command strip and flags -S -p) in  /nix/store/s5j5jjv7byy31bk88n6jhdrsbmk5qj1j-PROJ-msan-0.0.0-f92309e/lib /nix/store/s5j5jjv7byy31bk88n6jhdrsbmk5qj1j-PROJ-msan-0.0.0-f92309e/bin
