@@ -1,0 +1,8 @@
+StorePath: /nix/store/i2ba3khbh6z2kp5036mn2bf9qm8j523h-PROJ-msan-0.0.0-113d6a3
+URL: nar/i2ba3khbh6z2kp5036mn2bf9qm8j523h.nar
+Compression: none
+FileHash: sha256:1fq6diya9p47mri84x2wbwq8mhrz8fwks1arb9l4j8frd0djzj6y
+FileSize: 4289832
+NarHash: sha256:1fq6diya9p47mri84x2wbwq8mhrz8fwks1arb9l4j8frd0djzj6y
+NarSize: 4289832
+References: /nix/store/wb6rhpznjfczwlwx23zmdrrw74bayxw4-glibc-2.42-47 /nix/store/j2kgllgds4w7na8zqv1msi0mpvpjxda8-gcc-15.2.0-lib 
