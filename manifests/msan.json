@@ -1,0 +1,10 @@
+{
+  "variant": "msan",
+  "store_path": "/nix/store/gym34x29gif64is068v2nr58ss6p6iay-PROJ-msan-0.0.0-1b311cd",
+  "path_hash": "gym34x29gif64is068v2nr58ss6p6iay",
+  "file_hash": "1fq6diya9p47mri84x2wbwq8mhrz8fwks1arb9l4j8frd0djzj6y",
+  "file_size": 4289832,
+  "rev": "1b311cd8552ec231667ab6bb66c9eafe19a18184",
+  "version": "0.0.0-1b311cd",
+  "timestamp": "2026-01-30T03:48:07Z"
+}
