@@ -1,0 +1,8 @@
+StorePath: /nix/store/0yrxkmxk1qf6srmfrvm6qly3y94gwj6i-PROJ-ubsan-0.0.0-113d6a3
+URL: nar/0yrxkmxk1qf6srmfrvm6qly3y94gwj6i.nar
+Compression: none
+FileHash: sha256:1xjbvs33f6c5yq953pcrqd1fk3pgj6vcpqwfrmi4wz14zrvrd870
+FileSize: 1385880
+NarHash: sha256:1xjbvs33f6c5yq953pcrqd1fk3pgj6vcpqwfrmi4wz14zrvrd870
+NarSize: 1385880
+References: /nix/store/wb6rhpznjfczwlwx23zmdrrw74bayxw4-glibc-2.42-47 /nix/store/j2kgllgds4w7na8zqv1msi0mpvpjxda8-gcc-15.2.0-lib /nix/store/rwalsamz4246k8f1zzxa54qx7w3fbzdg-glibc-2.42-47-dev /nix/store/mjf8jlq9grydcdvyw6hb063x5c34g5gf-gcc-15.2.0 
