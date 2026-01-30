@@ -1,0 +1,10 @@
+{
+  "variant": "fuzz",
+  "store_path": "/nix/store/srqpgbnyd1hasjy71m6jamvd91lmz3fd-PROJ-fuzz-0.0.0-1b311cd",
+  "path_hash": "srqpgbnyd1hasjy71m6jamvd91lmz3fd",
+  "file_hash": "0hbsrs3c4yddz09kyy5nxgd0z9rb4pr9p0pz5jk38nspjxpcxhcj",
+  "file_size": 6649256,
+  "rev": "1b311cd8552ec231667ab6bb66c9eafe19a18184",
+  "version": "0.0.0-1b311cd",
+  "timestamp": "2026-01-30T03:48:13Z"
+}
