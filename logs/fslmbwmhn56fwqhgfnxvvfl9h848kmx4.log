@@ -1,0 +1,41 @@
+warning: not writing modified lock file of flake 'git+file:///home/gguy/Source/buildbuild/PULL':
+• Added input 'flake-parts':
+    'github:hercules-ci/flake-parts/80daad04eddbbf5a4d883996a73f3f542fa437ac?narHash=sha256-PVvu7OqHBGWN16zSi6tEmPwwHQ4rLPU9Plvs8/1TUBY%3D' (2026-01-11)
+• Added input 'flake-parts/nixpkgs-lib':
+    'github:nix-community/nixpkgs.lib/2075416fcb47225d9b68ac469a5c4801a9c4dd85?narHash=sha256-k00uTP4JNfmejrCLJOwdObYC9jHRrr/5M/a/8L2EIdo%3D' (2025-12-14)
+• Removed input 'flake-utils'
+• Removed input 'flake-utils/systems'
+• Added input 'src':
+    'git+ssh://git@github.com/NerdGGuy/PROJ?ref=refs/heads/main&rev=1b311cd8552ec231667ab6bb66c9eafe19a18184' (2026-01-30)
+this derivation will be built:
+  /nix/store/s1j54pmriipka0banyxrjj8vbf8rvrn5-PROJ-release-0.0.0-1b311cd.drv
+building '/nix/store/s1j54pmriipka0banyxrjj8vbf8rvrn5-PROJ-release-0.0.0-1b311cd.drv'...
+PROJ-release> Running phase: unpackPhase
+PROJ-release> unpacking source archive /nix/store/xr26ghlfqn496axfbxzv3nk3mk68dv0y-source
+PROJ-release> source root is source
+PROJ-release> Running phase: patchPhase
+PROJ-release> Running phase: updateAutotoolsGnuConfigScriptsPhase
+PROJ-release> Running phase: configurePhase
+PROJ-release> no configure script, doing nothing
+PROJ-release> Running phase: buildPhase
+PROJ-release> build flags: SHELL=/nix/store/f15k3dpilmiyv6zgpib289rnjykgr1r4-bash-5.3p9/bin/bash VARIANT=release CXX=/nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ CC=/nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang AR=/nix/store/5chxlq8nygpr9y6y9y9aqc3fsa28ng8w-llvm-21.1.8/bin/llvm-ar
+PROJ-release> mkdir -p build/release/lib
+PROJ-release> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -O3 -flto -DNDEBUG -c src/lib/calculator.cpp -o build/release/lib/calculator.o
+PROJ-release> /nix/store/5chxlq8nygpr9y6y9y9aqc3fsa28ng8w-llvm-21.1.8/bin/llvm-ar rcs build/release/libcalculator.a build/release/lib/calculator.o
+PROJ-release> mkdir -p build/release/apps
+PROJ-release> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -O3 -flto -DNDEBUG -Isrc/lib -c src/apps/calc.cpp -o build/release/apps/calc.o
+PROJ-release> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -O3 -flto -DNDEBUG -flto build/release/apps/calc.o -Lbuild/release -lcalculator -o build/release/calc
+PROJ-release> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -O3 -flto -DNDEBUG -Isrc/lib -c src/apps/demo.cpp -o build/release/apps/demo.o
+PROJ-release> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -O3 -flto -DNDEBUG -flto build/release/apps/demo.o -Lbuild/release -lcalculator -o build/release/demo
+PROJ-release> mkdir -p build/release/tests
+PROJ-release> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -O3 -flto -DNDEBUG -Isrc/lib -c tests/test_calculator.cpp -o build/release/tests/test_calculator.o
+PROJ-release> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -O3 -flto -DNDEBUG -flto build/release/tests/test_calculator.o -Lbuild/release -lcalculator -o build/release/test_calculator
+PROJ-release> Running phase: installPhase
+PROJ-release> Running phase: fixupPhase
+PROJ-release> shrinking RPATHs of ELF executables and libraries in /nix/store/fslmbwmhn56fwqhgfnxvvfl9h848kmx4-PROJ-release-0.0.0-1b311cd
+PROJ-release> shrinking /nix/store/fslmbwmhn56fwqhgfnxvvfl9h848kmx4-PROJ-release-0.0.0-1b311cd/bin/calc
+PROJ-release> shrinking /nix/store/fslmbwmhn56fwqhgfnxvvfl9h848kmx4-PROJ-release-0.0.0-1b311cd/bin/test_calculator
+PROJ-release> shrinking /nix/store/fslmbwmhn56fwqhgfnxvvfl9h848kmx4-PROJ-release-0.0.0-1b311cd/bin/demo
+PROJ-release> checking for references to /build/ in /nix/store/fslmbwmhn56fwqhgfnxvvfl9h848kmx4-PROJ-release-0.0.0-1b311cd...
+PROJ-release> patching script interpreter paths in /nix/store/fslmbwmhn56fwqhgfnxvvfl9h848kmx4-PROJ-release-0.0.0-1b311cd
+PROJ-release> stripping (with command strip and flags -S -p) in  /nix/store/fslmbwmhn56fwqhgfnxvvfl9h848kmx4-PROJ-release-0.0.0-1b311cd/lib /nix/store/fslmbwmhn56fwqhgfnxvvfl9h848kmx4-PROJ-release-0.0.0-1b311cd/bin
