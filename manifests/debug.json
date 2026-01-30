@@ -1,0 +1,10 @@
+{
+  "variant": "debug",
+  "store_path": "/nix/store/jjzgjshidhv4cs98s7f9smrk87ag2shi-PROJ-debug-0.0.0-1b311cd",
+  "path_hash": "jjzgjshidhv4cs98s7f9smrk87ag2shi",
+  "file_hash": "1dppxf5ygna0xsgd86f5lylkyqvpa5kr9bnvhkvcz6cdzh155nk1",
+  "file_size": 55792,
+  "rev": "1b311cd8552ec231667ab6bb66c9eafe19a18184",
+  "version": "0.0.0-1b311cd",
+  "timestamp": "2026-01-30T03:47:54Z"
+}
