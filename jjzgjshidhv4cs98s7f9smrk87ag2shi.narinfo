@@ -1,0 +1,8 @@
+StorePath: /nix/store/jjzgjshidhv4cs98s7f9smrk87ag2shi-PROJ-debug-0.0.0-1b311cd
+URL: nar/jjzgjshidhv4cs98s7f9smrk87ag2shi.nar
+Compression: none
+FileHash: sha256:1dppxf5ygna0xsgd86f5lylkyqvpa5kr9bnvhkvcz6cdzh155nk1
+FileSize: 55792
+NarHash: sha256:1dppxf5ygna0xsgd86f5lylkyqvpa5kr9bnvhkvcz6cdzh155nk1
+NarSize: 55792
+References: /nix/store/wb6rhpznjfczwlwx23zmdrrw74bayxw4-glibc-2.42-47 /nix/store/j2kgllgds4w7na8zqv1msi0mpvpjxda8-gcc-15.2.0-lib 
