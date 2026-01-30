@@ -1,0 +1,10 @@
+{
+  "variant": "coverage",
+  "store_path": "/nix/store/lq6qp4w7fp8hrm2ry7ii7qqhwsgh6289-PROJ-coverage-0.0.0-1b311cd",
+  "path_hash": "lq6qp4w7fp8hrm2ry7ii7qqhwsgh6289",
+  "file_hash": "14bkpnqnl70wza4mmi4nmz9lf6rr19ysywfg2iqhb5bgd36slmrq",
+  "file_size": 124280,
+  "rev": "1b311cd8552ec231667ab6bb66c9eafe19a18184",
+  "version": "0.0.0-1b311cd",
+  "timestamp": "2026-01-30T03:48:10Z"
+}
