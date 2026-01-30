@@ -1,10 +1,10 @@
 {
   "variant": "debug",
-  "store_path": "/nix/store/srrgm6basmkbv51gpf7dsrm7n97qmsc9-PROJ-debug-0.0.0-113d6a3",
-  "path_hash": "srrgm6basmkbv51gpf7dsrm7n97qmsc9",
+  "store_path": "/nix/store/1jybsq29wx7jd2jwh2abq23pvrdy8wff-PROJ-debug-0.0.0-92ed52d",
+  "path_hash": "1jybsq29wx7jd2jwh2abq23pvrdy8wff",
   "file_hash": "1dppxf5ygna0xsgd86f5lylkyqvpa5kr9bnvhkvcz6cdzh155nk1",
   "file_size": 55792,
-  "rev": "113d6a3ec89a4d787f9b75ba6823c6b44ed3d4b4",
-  "version": "0.0.0-113d6a3",
-  "timestamp": "2026-01-30T04:02:13Z"
+  "rev": "92ed52d2b21143b2792499d46433279b6f5c49c2",
+  "version": "0.0.0-92ed52d",
+  "timestamp": "2026-01-30T04:19:09Z"
 }
