@@ -1,10 +1,10 @@
 {
   "variant": "ubsan",
-  "store_path": "/nix/store/91rdfhxgx0wv6w9xl1s9wfnn6gwk35sb-PROJ-ubsan-0.0.0-1b311cd",
-  "path_hash": "91rdfhxgx0wv6w9xl1s9wfnn6gwk35sb",
+  "store_path": "/nix/store/27nwp0v4ajwck9vai7h6kl05l10fcx8j-PROJ-ubsan-0.0.0-5e045d3",
+  "path_hash": "27nwp0v4ajwck9vai7h6kl05l10fcx8j",
   "file_hash": "1xjbvs33f6c5yq953pcrqd1fk3pgj6vcpqwfrmi4wz14zrvrd870",
   "file_size": 1385880,
-  "rev": "1b311cd8552ec231667ab6bb66c9eafe19a18184",
-  "version": "0.0.0-1b311cd",
-  "timestamp": "2026-01-30T03:48:00Z"
+  "rev": "5e045d3765ccf646750bcda4ad2730e357b81c90",
+  "version": "0.0.0-5e045d3",
+  "timestamp": "2026-01-30T03:53:10Z"
 }
