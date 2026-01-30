@@ -1,10 +1,10 @@
 {
   "variant": "msan",
-  "store_path": "/nix/store/i2ba3khbh6z2kp5036mn2bf9qm8j523h-PROJ-msan-0.0.0-113d6a3",
-  "path_hash": "i2ba3khbh6z2kp5036mn2bf9qm8j523h",
+  "store_path": "/nix/store/5zzzyv17vyn9fh0qfhhnmvsa3w6gcb0q-PROJ-msan-0.0.0-92ed52d",
+  "path_hash": "5zzzyv17vyn9fh0qfhhnmvsa3w6gcb0q",
   "file_hash": "1fq6diya9p47mri84x2wbwq8mhrz8fwks1arb9l4j8frd0djzj6y",
   "file_size": 4289832,
-  "rev": "113d6a3ec89a4d787f9b75ba6823c6b44ed3d4b4",
-  "version": "0.0.0-113d6a3",
-  "timestamp": "2026-01-30T04:02:26Z"
+  "rev": "92ed52d2b21143b2792499d46433279b6f5c49c2",
+  "version": "0.0.0-92ed52d",
+  "timestamp": "2026-01-30T04:19:21Z"
 }
