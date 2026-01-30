@@ -198,30 +198,41 @@ upload_contents_api() {
         current_sha=$(echo "$current" | jq -r '.sha')
     fi
 
-    # Encode content
-    local content
-    content=$(base64 -w0 < "$file")
+    # Encode content to temp file to avoid ARG_MAX limits on large files
+    local content_file data_file
+    content_file=$(mktemp)
+    data_file=$(mktemp)
+    trap "rm -f '$content_file' '$data_file'" RETURN
 
-    # Build request
-    local data
+    base64 -w0 < "$file" > "$content_file"
+
+    # Build request — use --rawfile to read base64 content from file
     if [[ -n "$current_sha" ]]; then
-        data=$(jq -n \
+        jq -n \
             --arg message "$message" \
-            --arg content "$content" \
+            --rawfile content "$content_file" \
             --arg sha "$current_sha" \
             --arg branch "$BRANCH" \
-            '{message: $message, content: $content, sha: $sha, branch: $branch}'
-        )
+            '{message: $message, content: $content, sha: $sha, branch: $branch}' \
+            > "$data_file"
     else
-        data=$(jq -n \
+        jq -n \
             --arg message "$message" \
-            --arg content "$content" \
+            --rawfile content "$content_file" \
             --arg branch "$BRANCH" \
-            '{message: $message, content: $content, branch: $branch}'
-        )
+            '{message: $message, content: $content, branch: $branch}' \
+            > "$data_file"
     fi
 
-    gh_api PUT "/repos/${OWNER}/${REPO}/contents/${remote_path}" "$data"
+    # Use @file to send payload via curl, avoiding ARG_MAX for large JSON
+    local url="https://api.github.com/repos/${OWNER}/${REPO}/contents/${remote_path}"
+    curl -s -X PUT \
+        -H "Accept: application/vnd.github+json" \
+        -H "Authorization: Bearer ${TOKEN}" \
+        -H "X-GitHub-Api-Version: 2022-11-28" \
+        -H "Content-Type: application/json" \
+        -d "@${data_file}" \
+        "$url"
 }
 
 # Upload file using Blobs API (1-100MB)
@@ -230,16 +241,29 @@ upload_blobs_api() {
     local remote_path="$2"
     local message="$3"
 
-    # Create blob
-    local content
-    content=$(base64 -w0 < "$file")
+    # Create blob — use temp files to avoid ARG_MAX limits
+    local content_file data_file
+    content_file=$(mktemp)
+    data_file=$(mktemp)
+    trap "rm -f '$content_file' '$data_file'" RETURN
+
+    base64 -w0 < "$file" > "$content_file"
+
+    jq -n \
+        --rawfile content "$content_file" \
+        --arg encoding "base64" \
+        '{content: $content, encoding: $encoding}' \
+        > "$data_file"
 
     local blob_response
-    blob_response=$(gh_api POST "/repos/${OWNER}/${REPO}/git/blobs" "$(jq -n \
-        --arg content "$content" \
-        --arg encoding "base64" \
-        '{content: $content, encoding: $encoding}'
-    )")
+    local url="https://api.github.com/repos/${OWNER}/${REPO}/git/blobs"
+    blob_response=$(curl -s -X POST \
+        -H "Accept: application/vnd.github+json" \
+        -H "Authorization: Bearer ${TOKEN}" \
+        -H "X-GitHub-Api-Version: 2022-11-28" \
+        -H "Content-Type: application/json" \
+        -d "@${data_file}" \
+        "$url")
 
     local blob_sha
     blob_sha=$(echo "$blob_response" | jq -r '.sha')
