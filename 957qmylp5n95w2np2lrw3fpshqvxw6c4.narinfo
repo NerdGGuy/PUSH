@@ -1,0 +1,8 @@
+StorePath: /nix/store/957qmylp5n95w2np2lrw3fpshqvxw6c4-PROJ-coverage-0.0.0-113d6a3
+URL: nar/957qmylp5n95w2np2lrw3fpshqvxw6c4.nar
+Compression: none
+FileHash: sha256:14bkpnqnl70wza4mmi4nmz9lf6rr19ysywfg2iqhb5bgd36slmrq
+FileSize: 124280
+NarHash: sha256:14bkpnqnl70wza4mmi4nmz9lf6rr19ysywfg2iqhb5bgd36slmrq
+NarSize: 124280
+References: /nix/store/wb6rhpznjfczwlwx23zmdrrw74bayxw4-glibc-2.42-47 /nix/store/j2kgllgds4w7na8zqv1msi0mpvpjxda8-gcc-15.2.0-lib 
