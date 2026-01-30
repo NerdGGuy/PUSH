@@ -1,0 +1,8 @@
+StorePath: /nix/store/7pzwh0bvnah28fia6iawidw8nl2hksd9-PROJ-release-0.0.0-92ed52d
+URL: nar/7pzwh0bvnah28fia6iawidw8nl2hksd9.nar
+Compression: none
+FileHash: sha256:06jik0rvz5qzccwsx8ykfij6g3yvgi46yc72mavh3s60p931v494
+FileSize: 55832
+NarHash: sha256:06jik0rvz5qzccwsx8ykfij6g3yvgi46yc72mavh3s60p931v494
+NarSize: 55832
+References: /nix/store/wb6rhpznjfczwlwx23zmdrrw74bayxw4-glibc-2.42-47 /nix/store/j2kgllgds4w7na8zqv1msi0mpvpjxda8-gcc-15.2.0-lib 
