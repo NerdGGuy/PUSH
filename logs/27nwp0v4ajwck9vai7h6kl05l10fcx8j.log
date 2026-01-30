@@ -1,0 +1,42 @@
+warning: Git tree '/home/gguy/Source/buildbuild/PULL' is dirty
+warning: not writing modified lock file of flake 'git+file:///home/gguy/Source/buildbuild/PULL':
+• Added input 'flake-parts':
+    'github:hercules-ci/flake-parts/80daad04eddbbf5a4d883996a73f3f542fa437ac?narHash=sha256-PVvu7OqHBGWN16zSi6tEmPwwHQ4rLPU9Plvs8/1TUBY%3D' (2026-01-11)
+• Added input 'flake-parts/nixpkgs-lib':
+    'github:nix-community/nixpkgs.lib/2075416fcb47225d9b68ac469a5c4801a9c4dd85?narHash=sha256-k00uTP4JNfmejrCLJOwdObYC9jHRrr/5M/a/8L2EIdo%3D' (2025-12-14)
+• Removed input 'flake-utils'
+• Removed input 'flake-utils/systems'
+• Added input 'src':
+    'git+ssh://git@github.com/NerdGGuy/PROJ?ref=refs/heads/main&rev=5e045d3765ccf646750bcda4ad2730e357b81c90' (2026-01-30)
+this derivation will be built:
+  /nix/store/i5480q245fi70xj2dki042qi94pbb3pw-PROJ-ubsan-0.0.0-5e045d3.drv
+building '/nix/store/i5480q245fi70xj2dki042qi94pbb3pw-PROJ-ubsan-0.0.0-5e045d3.drv'...
+PROJ-ubsan> Running phase: unpackPhase
+PROJ-ubsan> unpacking source archive /nix/store/qy7grjbdh8ixhch1jjn7y8rrii7szc0q-source
+PROJ-ubsan> source root is source
+PROJ-ubsan> Running phase: patchPhase
+PROJ-ubsan> Running phase: updateAutotoolsGnuConfigScriptsPhase
+PROJ-ubsan> Running phase: configurePhase
+PROJ-ubsan> no configure script, doing nothing
+PROJ-ubsan> Running phase: buildPhase
+PROJ-ubsan> build flags: SHELL=/nix/store/f15k3dpilmiyv6zgpib289rnjykgr1r4-bash-5.3p9/bin/bash VARIANT=ubsan CXX=/nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ CC=/nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang AR=/nix/store/5chxlq8nygpr9y6y9y9aqc3fsa28ng8w-llvm-21.1.8/bin/llvm-ar
+PROJ-ubsan> mkdir -p build/ubsan/lib
+PROJ-ubsan> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=undefined -c src/lib/calculator.cpp -o build/ubsan/lib/calculator.o
+PROJ-ubsan> /nix/store/5chxlq8nygpr9y6y9y9aqc3fsa28ng8w-llvm-21.1.8/bin/llvm-ar rcs build/ubsan/libcalculator.a build/ubsan/lib/calculator.o
+PROJ-ubsan> mkdir -p build/ubsan/apps
+PROJ-ubsan> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=undefined -Isrc/lib -c src/apps/calc.cpp -o build/ubsan/apps/calc.o
+PROJ-ubsan> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=undefined -fsanitize=undefined -fsanitize=undefined build/ubsan/apps/calc.o -Lbuild/ubsan -lcalculator -o build/ubsan/calc
+PROJ-ubsan> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=undefined -Isrc/lib -c src/apps/demo.cpp -o build/ubsan/apps/demo.o
+PROJ-ubsan> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=undefined -fsanitize=undefined -fsanitize=undefined build/ubsan/apps/demo.o -Lbuild/ubsan -lcalculator -o build/ubsan/demo
+PROJ-ubsan> mkdir -p build/ubsan/tests
+PROJ-ubsan> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=undefined -Isrc/lib -c tests/test_calculator.cpp -o build/ubsan/tests/test_calculator.o
+PROJ-ubsan> /nix/store/6n5r46icm0bl55s9p5z2zgcv93m39r5l-clang-wrapper-21.1.8/bin/clang++ -std=c++17 -Wall -Wextra -Wpedantic -Og -g -fsanitize=undefined -fsanitize=undefined -fsanitize=undefined build/ubsan/tests/test_calculator.o -Lbuild/ubsan -lcalculator -o build/ubsan/test_calculator
+PROJ-ubsan> Running phase: installPhase
+PROJ-ubsan> Running phase: fixupPhase
+PROJ-ubsan> shrinking RPATHs of ELF executables and libraries in /nix/store/27nwp0v4ajwck9vai7h6kl05l10fcx8j-PROJ-ubsan-0.0.0-5e045d3
+PROJ-ubsan> shrinking /nix/store/27nwp0v4ajwck9vai7h6kl05l10fcx8j-PROJ-ubsan-0.0.0-5e045d3/bin/calc
+PROJ-ubsan> shrinking /nix/store/27nwp0v4ajwck9vai7h6kl05l10fcx8j-PROJ-ubsan-0.0.0-5e045d3/bin/test_calculator
+PROJ-ubsan> shrinking /nix/store/27nwp0v4ajwck9vai7h6kl05l10fcx8j-PROJ-ubsan-0.0.0-5e045d3/bin/demo
+PROJ-ubsan> checking for references to /build/ in /nix/store/27nwp0v4ajwck9vai7h6kl05l10fcx8j-PROJ-ubsan-0.0.0-5e045d3...
+PROJ-ubsan> patching script interpreter paths in /nix/store/27nwp0v4ajwck9vai7h6kl05l10fcx8j-PROJ-ubsan-0.0.0-5e045d3
+PROJ-ubsan> stripping (with command strip and flags -S -p) in  /nix/store/27nwp0v4ajwck9vai7h6kl05l10fcx8j-PROJ-ubsan-0.0.0-5e045d3/lib /nix/store/27nwp0v4ajwck9vai7h6kl05l10fcx8j-PROJ-ubsan-0.0.0-5e045d3/bin
