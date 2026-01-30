@@ -1,0 +1,8 @@
+StorePath: /nix/store/qsh0jffy0pvmqih2qr5vl2sjfbvsjnm0-PROJ-fuzz-0.0.0-f92309e
+URL: nar/qsh0jffy0pvmqih2qr5vl2sjfbvsjnm0.nar
+Compression: none
+FileHash: sha256:0hbsrs3c4yddz09kyy5nxgd0z9rb4pr9p0pz5jk38nspjxpcxhcj
+FileSize: 6649256
+NarHash: sha256:0hbsrs3c4yddz09kyy5nxgd0z9rb4pr9p0pz5jk38nspjxpcxhcj
+NarSize: 6649256
+References: /nix/store/wb6rhpznjfczwlwx23zmdrrw74bayxw4-glibc-2.42-47 /nix/store/j2kgllgds4w7na8zqv1msi0mpvpjxda8-gcc-15.2.0-lib 
