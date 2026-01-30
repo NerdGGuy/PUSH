@@ -1,10 +1,10 @@
 {
   "variant": "coverage",
-  "store_path": "/nix/store/7rp0d211rq9ksnshyy61lrlmfgg97546-PROJ-coverage-0.0.0-5e045d3",
-  "path_hash": "7rp0d211rq9ksnshyy61lrlmfgg97546",
+  "store_path": "/nix/store/vi18cl5g5jgxiz40w5ms6r12w4lbixnv-PROJ-coverage-0.0.0-04f1be3",
+  "path_hash": "vi18cl5g5jgxiz40w5ms6r12w4lbixnv",
   "file_hash": "14bkpnqnl70wza4mmi4nmz9lf6rr19ysywfg2iqhb5bgd36slmrq",
   "file_size": 124280,
-  "rev": "5e045d3765ccf646750bcda4ad2730e357b81c90",
-  "version": "0.0.0-5e045d3",
-  "timestamp": "2026-01-30T03:53:20Z"
+  "rev": "04f1be3fb421428350962340a2238190c549ad0b",
+  "version": "0.0.0-04f1be3",
+  "timestamp": "2026-01-30T03:58:37Z"
 }
