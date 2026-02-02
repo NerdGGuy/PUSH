@@ -6,6 +6,7 @@ PUSH is the binary cache component of [buildbuild](../README.md). It stores unco
 
 - [Setting Up the Cache Repository](#setting-up-the-cache-repository)
 - [Configuring as a Nix Substituter](#configuring-as-a-nix-substituter)
+  - [Private Repositories](#private-repositories)
 - [Why Uncompressed NARs](#why-uncompressed-nars)
 - [Storage Layout](#storage-layout)
 - [upload.sh Usage](#uploadsh-usage)
@@ -90,6 +91,70 @@ Once configured, Nix will automatically check the cache before building:
 nix build .#release
 # Fetches from cache if available, builds locally if not
 ```
+
+### Private Repositories
+
+When the cache repository is private, Nix must authenticate its HTTP requests to `raw.githubusercontent.com`. Use the `netrc-file` mechanism, which is Nix's built-in support for HTTP binary cache authentication.
+
+#### 1. Create a GitHub Token
+
+Create a GitHub Personal Access Token:
+- **Classic token**: needs `repo` scope
+- **Fine-grained token**: needs `Contents: Read` permission on the cache repository
+
+#### 2. Create a netrc File
+
+```bash
+mkdir -p ~/.config/nix
+
+cat > ~/.config/nix/netrc <<'EOF'
+machine raw.githubusercontent.com
+login x-access-token
+password ghp_YOUR_TOKEN
+EOF
+
+chmod 600 ~/.config/nix/netrc
+```
+
+Replace `ghp_YOUR_TOKEN` with your actual token.
+
+#### 3. Configure Nix to Use the netrc File
+
+Add to `~/.config/nix/nix.conf`:
+
+```
+netrc-file = /home/YOUR_USER/.config/nix/netrc
+```
+
+The path must be absolute — `netrc-file` does not expand `~`.
+
+#### 4. Multi-User (Daemon) Installs
+
+On multi-user Nix installs, the daemon runs as root and does not read per-user config. Place the netrc file and config system-wide instead:
+
+```bash
+sudo tee /etc/nix/netrc <<'EOF'
+machine raw.githubusercontent.com
+login x-access-token
+password ghp_YOUR_TOKEN
+EOF
+
+sudo chmod 600 /etc/nix/netrc
+```
+
+Add to `/etc/nix/nix.conf`:
+
+```
+netrc-file = /etc/nix/netrc
+```
+
+#### 5. Verify
+
+```bash
+nix path-info --store https://raw.githubusercontent.com/OWNER/REPO/main /nix/store/SOME-HASH
+```
+
+If authentication is working, this returns the path info. Without it, Nix reports the path as unavailable.
 
 ## Why Uncompressed NARs
 
